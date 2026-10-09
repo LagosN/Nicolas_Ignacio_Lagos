@@ -13,8 +13,8 @@ public class Main {
 
 
         // Profe intente usar la lista pre cargada en la clase gestor, no puede e intete agregar por gestor.//
-        Departamentos depto1 = new Departamentos("PROP-D01", 65,3,8);
-        Departamentos depto2 = new Departamentos("PROP-D02", 48,2,3);
+        Departamento depto1 = new Departamento("PROP-D01", 65,3,8);
+        Departamento depto2 = new Departamento("PROP-D02", 48,2,3);
         Casa casa1 =  new Casa("PROP-C01", 120, 4,true);
         Casa casa2 =  new Casa("PROP-C02", 90, 3,false);
 

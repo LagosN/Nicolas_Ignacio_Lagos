@@ -28,8 +28,8 @@ public class GestordeVivienda {
     }
 
     public void cargarViviendas() {
-        Departamentos depto1 = new Departamentos("PROP-DO1", 65,3,8);
-        Departamentos depto2 = new Departamentos("PROP-DO2", 48,2,3);
+        Departamento depto1 = new Departamento("PROP-DO1", 65,3,8);
+        Departamento depto2 = new Departamento("PROP-DO2", 48,2,3);
         Casa casa1 =  new Casa("PROP-C01", 120, 4,true);
         Casa casa2 =  new Casa("PROP-C02", 90, 3,false);
     }
@@ -51,10 +51,10 @@ public class GestordeVivienda {
         for (Vivienda listaViviedas : viviendas) {
 
             if (listaViviedas.getCodigoPropiedad().equals(codigo) ) {
-                if (listaViviedas instanceof  Departamentos departamentos) {
+                if (listaViviedas instanceof  Departamento departamentos) {
 
                     String dato;
-                    dato = "Tipo: " + getClass().getSimpleName()+ "|" + "Codigo: " + codigo+ "|" + "Superficie: " + listaViviedas.getMetrosCuadrados()+ "|" + "Habitaciones: " + listaViviedas.getNumeroHabitacones()+ "|" + '\''
+                    dato = "Tipo: " + listaViviedas.getClass().getSimpleName()+ "|" + "Codigo: " + codigo+ "|" + "Superficie: " + listaViviedas.getMetrosCuadrados()+ "|" + "Habitaciones: " + listaViviedas.getNumeroHabitacones()+ "|" + '\''
                             + "Piso: " + departamentos.getNumeroDePisos() + "|" + "Gasto común al día: " + (departamentos.isGastoComunAlDia() ? "Si" : "No")+ "|"
                             + "Estacionamiento asignado: "+ (departamentos.estacionamientoAsignado() ? "Si" : "No")+ "|" + "Costo Arriendo: " + departamentos.costoDeArriendo();
                     return dato;
