@@ -18,13 +18,15 @@ public class Casa extends Vivienda {
     }
 
     @Override
-    public void costoDeArriendo() {
+    public double costoDeArriendo() {
         double costo = 250000;
         if (isConPatio()) {
             costo =  (costo * 1.15);
             System.out.println("Casa cuenta con patio " + costo);
+            return costo;
         }
         System.out.println("Casa no cuenta con patio: " + costo);
+        return  costo;
 
 
     }

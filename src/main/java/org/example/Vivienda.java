@@ -6,9 +6,9 @@ public  abstract class Vivienda {
     protected int numeroHabitacones;
 
     public Vivienda(String codigoPropiedad, double metrosCuadrados, int numeroHabitacones) {
-        this.codigoPropiedad = codigoPropiedad;
-        this.metrosCuadrados = metrosCuadrados;
-        this.numeroHabitacones = numeroHabitacones;
+        setCodigoPropiedad(codigoPropiedad);
+        setMetrosCuadrados(metrosCuadrados);
+        setNumeroHabitacones(numeroHabitacones);
     }
 
     public String getCodigoPropiedad() {
@@ -27,15 +27,10 @@ public  abstract class Vivienda {
     }
 
     public void setMetrosCuadrados(double metrosCuadrados) {
-        try {if (metrosCuadrados < 20 || metrosCuadrados > 500) {
+        if (metrosCuadrados < 20 || metrosCuadrados > 500) {
             throw new IllegalArgumentException("MetrosCuadrados no valido");
         }
             this.metrosCuadrados = metrosCuadrados;
-
-        } catch (Exception e) {
-            throw new IllegalArgumentException(e);
-        }
-
     }
 
     public int getNumeroHabitacones() {
@@ -43,7 +38,7 @@ public  abstract class Vivienda {
     }
 
     public void setNumeroHabitacones(int numeroHabitacones) {
-        if (numeroHabitacones < 0) {
+        if (numeroHabitacones <= 0) {
             throw new IllegalArgumentException("NumeroHabitacones no valido");
         }
         this.numeroHabitacones = numeroHabitacones;
@@ -51,12 +46,10 @@ public  abstract class Vivienda {
 
     @Override
     public String toString() {
-        return "Vivienda{" +
-                "metrosCuadrados=" + metrosCuadrados +
-                ", codigoPropiedad='" + codigoPropiedad + '\'' +
-                '}';
+        return "Superficie: " + getMetrosCuadrados() +
+                ", Código: '" + getCodigoPropiedad() + '\'' ;
     }
 
-    public abstract void costoDeArriendo();
+    public abstract double costoDeArriendo();
 
 }

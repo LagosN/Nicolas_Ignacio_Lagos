@@ -23,7 +23,9 @@ public class Departamentos extends Vivienda implements ConEstacionamiento{
     }
 
     public void setGastoComunAlDia(boolean gastoComunAlDia) {
-        this.gastoComunAlDia = true;
+        this.gastoComunAlDia = gastoComunAlDia;
+
+
     }
 
     public boolean isEstacionamientoAsignado() {
@@ -44,25 +46,25 @@ public class Departamentos extends Vivienda implements ConEstacionamiento{
     }
 
     @Override
-    public void costoDeArriendo() {
+    public double costoDeArriendo() {
         double costo = 180000;
-        if (isGastoComunAlDia()) {
-            costo = (costo * 1.15);
-            System.out.println("Gasto comun al día, costo de Arriendo: " + costo);
+        if (!isGastoComunAlDia()) {
+            costo = costo + (costo *0.15);
+            return costo;
         }
-        System.out.println("Costo de Arriendo: " + costo);
+        return  costo;
     }
 
     @Override
-    public boolean estacionamientoAsignado(boolean estacionamientoAsignado) {
+    public boolean estacionamientoAsignado() {
         if (isEstacionamientoAsignado()){
             return isEstacionamientoAsignado();}
         return false;
     }
 
     @Override
-    public boolean asignarEstacionamiento() {
-        this.estacionamientoAsignado = true;
+    public boolean asignarEstacionamiento(boolean estacionamientoAsignado) {
+        this.estacionamientoAsignado = estacionamientoAsignado;
         return isEstacionamientoAsignado();
 
     }

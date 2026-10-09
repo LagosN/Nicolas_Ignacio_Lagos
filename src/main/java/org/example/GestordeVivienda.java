@@ -19,7 +19,12 @@ public class GestordeVivienda {
 
 
     public void agregarVivienda(Vivienda vivienda) {
+        if (vivienda == null){
+            throw new IllegalArgumentException("Error, vivienda con un dato erroneo.");
+        }
+
         this.viviendas.add(vivienda);
+        System.out.println( vivienda.getCodigoPropiedad() + " "+vivienda.getClass().getSimpleName()+" " +"registrada correctamente.");
     }
 
     public void cargarViviendas() {
@@ -30,6 +35,7 @@ public class GestordeVivienda {
     }
 
     public List<Vivienda> getViviendas() {
+
         return viviendas;
     }
 
@@ -40,19 +46,23 @@ public class GestordeVivienda {
         this.viviendas = viviendas;
     }
 
-    public String buscadorVivienda(Vivienda vivienda) {
+    public String buscadorVivienda(String codigo) {
+
         for (Vivienda listaViviedas : viviendas) {
-            if (listaViviedas.equals(vivienda)) {
-                return listaViviedas.toString();
+
+            if (listaViviedas.getCodigoPropiedad().equals(codigo) ) {
+                if (listaViviedas instanceof  Departamentos departamentos) {
+
+                    String dato;
+                    dato = "Tipo: " + getClass().getSimpleName()+ "|" + "Codigo: " + codigo+ "|" + "Superficie: " + listaViviedas.getMetrosCuadrados()+ "|" + "Habitaciones: " + listaViviedas.getNumeroHabitacones()+ "|" + '\''
+                            + "Piso: " + departamentos.getNumeroDePisos() + "|" + "Gasto común al día: " + (departamentos.isGastoComunAlDia() ? "Si" : "No")+ "|"
+                            + "Estacionamiento asignado: "+ (departamentos.estacionamientoAsignado() ? "Si" : "No")+ "|" + "Costo Arriendo: " + departamentos.costoDeArriendo();
+                    return dato;
+                }
             }
         }
-        return "Vienda no encontrado";
+        return "Vivienda no encontrado";
     }
 
-    @Override
-    public String toString() {
-        return "GestordeVivienda{" + // Al no tener terminada la lista, no puedo acceder a getCodigoPropiedad()  para CODIGO y getSuperficie().
-                "viviendas=" + viviendas +
-                '}';
-    }
+
 }
