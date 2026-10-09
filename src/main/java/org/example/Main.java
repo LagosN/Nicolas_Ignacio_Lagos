@@ -3,16 +3,15 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
         GestordeVivienda gestor  = new GestordeVivienda( );
-        List<Vivienda> viviendas = new ArrayList<>();
 
 
-        // Profe intente usar la lista pre cargada en la clase gestor, no puede e intete agregar por gestor.//
+
+
         Departamento depto1 = new Departamento("PROP-D01", 65,3,8);
         Departamento depto2 = new Departamento("PROP-D02", 48,2,3);
         Casa casa1 =  new Casa("PROP-C01", 120, 4,true);
