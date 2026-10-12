@@ -11,7 +11,6 @@ public class GestordeVivienda {
             throw new IllegalArgumentException("Viviendas no valido");
         }
         this.viviendas.add((Vivienda) viviendas);
-
     }
 
     public GestordeVivienda() {
@@ -26,7 +25,7 @@ public class GestordeVivienda {
         this.viviendas.add(vivienda);
         System.out.println( vivienda.getCodigoPropiedad() + " "+vivienda.getClass().getSimpleName()+" " +"registrada correctamente.");
     }
-
+    /* Metodo no es usado */
     public void cargarViviendas() {
         Departamento depto1 = new Departamento("PROP-DO1", 65,3,8);
         Departamento depto2 = new Departamento("PROP-DO2", 48,2,3);
@@ -54,7 +53,7 @@ public class GestordeVivienda {
                 if (listaViviedas instanceof  Departamento departamentos) {
 
                     String dato;
-                    dato = "Tipo: " + listaViviedas.getClass().getSimpleName()+ "|" + "Codigo: " + codigo+ "|" + "Superficie: " + listaViviedas.getMetrosCuadrados()+ "|" + "Habitaciones: " + listaViviedas.getNumeroHabitacones()+ "|" + '\''
+                    dato = "Tipo: " + listaViviedas.getClass().getSimpleName()+ "|" + "Código: " + codigo+ "|" + "Superficie: " + listaViviedas.getMetrosCuadrados()+ "|" + "Habitaciones: " + listaViviedas.getNumeroHabitacones()+ "|" + '\''
                             + "Piso: " + departamentos.getNumeroDePisos() + "|" + "Gasto común al día: " + (departamentos.isGastoComunAlDia() ? "Si" : "No")+ "|"
                             + "Estacionamiento asignado: "+ (departamentos.estacionamientoAsignado() ? "Si" : "No")+ "|" + "Costo Arriendo: " + departamentos.costoDeArriendo();
                     return dato;

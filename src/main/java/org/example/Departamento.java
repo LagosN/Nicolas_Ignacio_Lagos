@@ -7,13 +7,14 @@ public class Departamento extends Vivienda implements ConEstacionamiento{
 
     public Departamento(String codigoPropiedad, double metrosCuadrados, int numeroHabitacones, int numeroDePisos, boolean gastoComunAlDia, boolean estacionamientoAsignado) {
         super(codigoPropiedad, metrosCuadrados, numeroHabitacones);
-        this.numeroDePisos = numeroDePisos;
-        this.gastoComunAlDia = gastoComunAlDia;
-        this.estacionamientoAsignado = estacionamientoAsignado;
+        setNumeroDePisos(numeroDePisos);
+        setGastoComunAlDia(gastoComunAlDia);
+        setEstacionamientoAsignado(estacionamientoAsignado);
+
     }
     public Departamento(String codigoPropiedad, double metrosCuadrados, int numeroHabitacones, int numeroDePisos) {
         super(codigoPropiedad, metrosCuadrados, numeroHabitacones);
-        this.numeroDePisos = numeroDePisos;
+        setNumeroDePisos(numeroDePisos);
 
     }
 

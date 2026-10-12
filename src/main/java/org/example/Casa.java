@@ -6,7 +6,7 @@ public class Casa extends Vivienda {
 
     public Casa(String codigoPropiedad, double metrosCuadrados, int numeroHabitacones, boolean conPatio) {
         super(codigoPropiedad, metrosCuadrados, numeroHabitacones);
-        this.conPatio = conPatio;
+        setConPatio(conPatio);
     }
 
     public boolean isConPatio() {
